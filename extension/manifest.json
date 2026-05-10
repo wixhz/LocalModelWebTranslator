@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Local Model Translator",
+  "description": "Translate selected text with a local model service.",
+  "version": "0.1.0",
+  "permissions": ["storage", "contextMenus"],
+  "host_permissions": [
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Local Model Translator",
+    "default_popup": "popup.html"
+  }
+}

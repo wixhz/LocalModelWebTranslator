@@ -1,0 +1,9 @@
+{
+  "name": "local-model-translator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "proxy": "node proxy/server.js"
+  }
+}

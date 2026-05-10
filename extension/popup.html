@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Model Translator</title>
+    <style>
+      body {
+        width: 292px;
+        margin: 0;
+        padding: 0;
+        background: #f4f7fb;
+        color: #1f2328;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 13px;
+      }
+      .popup-shell {
+        padding: 14px;
+      }
+      .brand {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 12px;
+        border: 1px solid rgba(31, 41, 55, 0.1);
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 10px 24px rgba(30, 50, 80, 0.08);
+      }
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: #0f766e;
+        color: #ffffff;
+        font-size: 20px;
+        font-weight: 800;
+      }
+      h1 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.2;
+      }
+      .state {
+        margin: 3px 0 0;
+        color: #0f766e;
+        font-size: 12px;
+        font-weight: 650;
+      }
+      p {
+        margin: 12px 2px;
+        color: #57606a;
+        line-height: 1.45;
+      }
+      button {
+        width: 100%;
+        height: 36px;
+        border: 1px solid rgba(15, 118, 110, 0.22);
+        border-radius: 6px;
+        padding: 0 14px;
+        background: #0f766e;
+        color: #ffffff;
+        font: inherit;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #115e59;
+      }
+      label {
+        display: grid;
+        gap: 6px;
+        margin: 12px 0;
+        color: #4b5563;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      select {
+        width: 100%;
+        height: 34px;
+        box-sizing: border-box;
+        border: 1px solid rgba(31, 41, 55, 0.16);
+        border-radius: 6px;
+        padding: 0 10px;
+        background: #ffffff;
+        color: #1f2328;
+        font: inherit;
+        outline: none;
+      }
+      select:focus {
+        border-color: #0f766e;
+        box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
+      }
+      .status {
+        min-height: 18px;
+        margin: 8px 2px 0;
+        color: #0f766e;
+        font-size: 12px;
+        font-weight: 650;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup-shell">
+      <div class="brand">
+        <div class="mark">译</div>
+        <div>
+          <h1>Local Model</h1>
+          <div class="state">Ready</div>
+        </div>
+      </div>
+      <p>划词后使用浮层翻译；可随时切换本地模型。</p>
+      <label>
+        Current model
+        <select id="model-select"></select>
+      </label>
+      <button id="options-button">Open settings</button>
+      <div class="status" id="status" role="status"></div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

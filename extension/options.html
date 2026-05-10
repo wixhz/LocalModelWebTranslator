@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Model Translator Settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main class="settings-shell">
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">Local Model Translator</p>
+          <h1>划词翻译设置</h1>
+        </div>
+        <img src="assets/settings-visual.svg" alt="Local translation preview">
+      </section>
+
+      <section class="settings-panel">
+        <form id="settings-form">
+          <div class="form-grid">
+            <label class="field field-wide">
+              <span>Provider</span>
+              <select name="provider">
+                <option value="local-proxy">Local proxy /translate</option>
+                <option value="ollama">Ollama /api/chat</option>
+                <option value="openai-compatible">OpenAI-compatible /v1/chat/completions</option>
+              </select>
+            </label>
+
+            <label class="field field-wide">
+              <span>Endpoint</span>
+              <input name="endpoint" type="url" required>
+            </label>
+
+            <label class="field">
+              <span>Model</span>
+              <input name="model" type="text" required>
+            </label>
+
+            <label class="field field-wide">
+              <span>Model list</span>
+              <textarea name="models" rows="4" placeholder="每行一个模型名称，例如 qwen2.5:7b"></textarea>
+            </label>
+
+            <label class="field">
+              <span>Target language</span>
+              <input name="targetLanguage" type="text" required>
+            </label>
+
+            <label class="field">
+              <span>Source language</span>
+              <input name="sourceLanguage" type="text">
+            </label>
+
+            <label class="field">
+              <span>Temperature</span>
+              <input name="temperature" type="number" min="0" max="2" step="0.1">
+            </label>
+
+            <label class="field">
+              <span>Max selected characters</span>
+              <input name="maxChars" type="number" min="100" max="20000" step="100">
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="submit">Save settings</button>
+            <button type="button" id="reset-button">Reset</button>
+            <p id="status" role="status"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
